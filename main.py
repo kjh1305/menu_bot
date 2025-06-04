@@ -6,7 +6,7 @@ from google import genai
 
 app = FastAPI()
 
-client = genai.Client(api_key="YOUR_API_KEY")
+client = genai.Client(api_key="AIzaSyD_bfFpqh_wlT1GmroI0xS7kzQS3XV5Y3k")
 
 
 @app.get("/")
@@ -16,6 +16,6 @@ def read_root():
 @app.get("/test")
 def test():
     response = client.models.generate_content(
-        model="gemini-2.0-flash", contents="Explain how AI works in a few words"
+        model="gemini-2.0-flash", contents="너 이름이 뭐니?"
     )
     return {"response": response.text}
